@@ -13,11 +13,11 @@ contract SimpleStorage {
     mapping(string => uint256) public nameToFavouriteNumber;
 
     function addPerson(string memory _name, uint256 _favouriteNumber) public {
-        listOfPeople.push(Person(_name, _favouriteNumber));
+        listOfPeople.push(Person(_favouriteNumber, _name));
         nameToFavouriteNumber[_name] = _favouriteNumber;
     }
 
-    function store(uint256 _favouriteNumber) public {
+    function store(uint256 _favouriteNumber) public virtual {
         myFavouriteNumber = _favouriteNumber;
     }
 
